@@ -18,7 +18,7 @@ context('todo.js', function() {
     });
 
     describe('#insertItem', function() {
-      it('should add item objects', function() {
+      it('should insert an item object', function() {
         let item = {value: 'item', done: false};
         let index = this.list.insertItem('item');
 
@@ -27,20 +27,21 @@ context('todo.js', function() {
 
         this.list.insertItem(123, true, 0);
         assert.deepEqual(this.list.getItem(0), { value: '123', done: true });
+        assert.equal(this.list.getItem(1).value, 'item');
       });
     });
 
     describe('#removeItem', function() {
       it('should remove item objects', function() {
+        this.list.insertItem('item0');
         this.list.insertItem('item1');
         this.list.insertItem('item2');
-        this.list.insertItem('item3');
 
         this.list.removeItem(1);
         assert.equal(this.list.length, 2);
         this.list.removeItem(1);
         assert.equal(this.list.length, 1);
-        assert.equal(this.list.getItem(0).value, 'item1');
+        assert.equal(this.list.getItem(0).value, 'item0');
         this.list.removeItem(0);
         assert.equal(this.list.length, 0);
       });
@@ -55,6 +56,17 @@ context('todo.js', function() {
         assert.deepEqual(this.list.getItem(0), {value:'item0', done:false});
         assert.deepEqual(this.list.getItem(1), {value:'item2', done:false});
       });
+    });
+
+    describe('#swapItems', function() {
+      it('should swap 2 items', function() {
+        this.list.insertItem('item0');
+        this.list.insertItem('item1');
+        this.list.swapItems(0,1);
+
+        assert.equal(this.list.getItem(0).value, 'item1');
+        assert.equal(this.list.getItem(1).value, 'item0');
+      })
     });
 
     describe('#markItem', function() {
@@ -113,7 +125,7 @@ context('todo.js', function() {
     });
   });
 
-  describe.skip('Class Project', function() {
+  describe('Class Project', function() {
     beforeEach(function() {
       this.project = new todo.Project(' #title', 'description\nmultiline!');
     });
@@ -127,8 +139,45 @@ context('todo.js', function() {
       });
     });
 
-    describe.skip('', function() {
-      
+    describe('#insertList', function() {
+      it('should insert a list object', function() {
+        let list0 = new todo.List('todolist0', 'desc');
+        let list1 = new todo.List('todolist1', 'desc');
+
+        this.project.insertList(list0);
+        assert.equal(this.project.getList(0).title, ' todolist0');
+
+        this.project.insertList(list1, 0);
+        assert.equal(this.project.getList(0).title, ' todolist1');
+        assert.equal(this.project.getList(1).title, ' todolist0');
+      });
+    });
+
+    describe('#removeList', function() {
+      it('should remove list objects', function() {
+        this.project.insertList(new todo.List('todolist0', 'desc')); 
+        this.project.insertList(new todo.List('todolist1', 'desc')); 
+        this.project.insertList(new todo.List('todolist2', 'desc')); 
+
+        this.project.removeList(1);
+        assert.equal(this.project.length, 2);
+        this.project.removeList(0);
+        assert.equal(this.project.length, 1);
+        assert.equal(this.project.getList(0).title, ' todolist2');
+        this.project.removeList(0);
+        assert.equal(this.project.length, 0);
+      });
+    });
+
+    describe('#swapLists', function() {
+      it('should swap 2 list objects', function() {
+        this.project.insertList(new todo.List('todolist0', 'desc')); 
+        this.project.insertList(new todo.List('todolist1', 'desc')); 
+        this.project.swapLists(0,1);
+
+        assert.equal(this.project.getList(0).title, ' todolist1');
+        assert.equal(this.project.getList(1).title, ' todolist0');
+      });
     });
   });
 });
