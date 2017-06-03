@@ -1,6 +1,4 @@
-## <WIP>
-
-# TodoCMD
+# TodoCMD  \<WIP\>
 A basic CLI to manage markdown formatted todo lists.
 
 ## Features
