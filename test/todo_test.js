@@ -26,8 +26,8 @@ describe('todo.js', function() {
         assert.equal(list.length, 1);
         assert.deepEqual(list.getItem(index), item);
 
-        list.addItem(0, 123);
-        assert.deepEqual(list.getItem(0), { value: '123', done: false });
+        list.addItem(0, 123, true);
+        assert.deepEqual(list.getItem(0), { value: '123', done: true });
       });
     });
 
@@ -42,23 +42,14 @@ describe('todo.js', function() {
       });
     });
 
-    describe('#checkItem', function() {
+    describe('#markItem', function() {
       it('should mark the item as done', function() {
         list.addItem(0, 'item1');
-        list.addItem(1, 'item2');
-        list.checkItem(0);
+        list.addItem(1, 'item2', true);
+        list.markItem(0, true);
+        list.markItem(1, false);
 
         assert(list.getItem(0).done);
-      });
-    });
-
-    describe('#uncheckItem', function() {
-      it('should mark the item as todo', function() {
-        list.addItem(0, 'item1');
-        list.addItem(1, 'item2');
-        list.checkItem(0);
-        list.uncheckItem(0);
-
         assert(!list.getItem(1).done);
       });
     });
@@ -67,7 +58,7 @@ describe('todo.js', function() {
       it('should toggle the state of an item', function() {
         list.addItem(0, 'item1');
         list.addItem(1, 'item2');
-        list.checkItem(1);
+        list.markItem(1, true);
 
         list.toggleItem(0);
         assert(list.getItem(0).done);
