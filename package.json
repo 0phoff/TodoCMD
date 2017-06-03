@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "mocha -w --reporter min"
   },
   "keywords": [
     "todo",
@@ -27,7 +27,5 @@
     "commander": "^2.9.0",
     "inquirer": "^3.0.6"
   },
-  "devDependencies": {
-    "sinon": "^2.3.2"
-  }
+  "devDependencies": {}
 }
