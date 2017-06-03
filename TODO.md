@@ -4,14 +4,14 @@ This is the TODO list for the todoCMD app.
 ## Overview functionality
 This list contains an overview of everything that needs to be done.
   - [ ] (main.js) Commander CLI parsing
-  - [ ] (todo.js) Manage JS Todo objects
+  - [X] (todo.js) Manage JS Todo objects
   - [ ] (md.js) Parse & Write markdown files
   - [ ] (ui.js) blessed/ncurses UI
 
 ## todo.js
   - [X] CRUD Projects
   - [X] Edit Project details
-  - [ ] CRUD Project Lists
+  - [X] CRUD Project Lists
   - [X] Edit List details
   - [X] CRUD List items
 
