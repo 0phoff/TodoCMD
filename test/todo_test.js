@@ -10,7 +10,7 @@ context('todo.js', function() {
     describe('#ctor', function() {
       it('should return a valid & sanitized object', function() {
         assert.equal(this.list.title, ' rad #title!');
-        assert.equal(this.list.desc, 'sanitizing\nis really nice');
+        assert.equal(this.list.desc, 'sanitizing\nis really nice\n 1\n 2');
         assert.equal(this.list.length, 0);
         assert.equal(this.list.done, 0);
         assert.deepEqual(this.list._content, []);
