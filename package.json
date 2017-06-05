@@ -8,8 +8,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
-    "test:watch": "mocha -w --reporter min"
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/0phoff/TodoCMD"
   },
   "keywords": [
     "todo",
