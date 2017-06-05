@@ -16,5 +16,5 @@ This list contains an overview of everything that needs to be done.
   - [X] CRUD List items
 
 ## md.js
-  - [ ] Parse markdown file to a JS Todo object
+  - [X] Parse markdown file to a JS Todo object
   - [X] Write a markdown file from a JS Todo object
