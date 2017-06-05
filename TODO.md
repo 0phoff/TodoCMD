@@ -5,7 +5,7 @@ This is the TODO list for the todoCMD app.
 This list contains an overview of everything that needs to be done.
   - [ ] (main.js) Commander CLI parsing
   - [X] (todo.js) Manage JS Todo objects
-  - [ ] (md.js) Parse & Write markdown files
+  - [X] (md.js) Parse & Write markdown files
   - [ ] (ui.js) blessed/ncurses UI
 
 ## todo.js
