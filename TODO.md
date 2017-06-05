@@ -17,4 +17,4 @@ This list contains an overview of everything that needs to be done.
 
 ## md.js
   - [ ] Parse markdown file to a JS Todo object
-  - [ ] Write a markdown file from a JS Todo object
+  - [X] Write a markdown file from a JS Todo object
