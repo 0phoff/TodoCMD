@@ -10,7 +10,7 @@ This list contains an overview of everything that needs to be done.
   - [ ] (ui.js) blessed/ncurses UI
 
 ## cli.js
-  - [ ] (cli_parser.js) Create CLI parser
+  - [X] (cli_parser.js) Create CLI parser
   - [ ] todo                                        -> Open project [filename] in ncurses
   - [ ] tood new                                    -> Create new project [filename]
   - [ ] todo list [-i] [regex]                      -> If [num/regex] -> Show items from list; Else -> Show lists from [filename]
