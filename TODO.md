@@ -18,8 +18,8 @@ This list contains an overview of everything that needs to be done.
   - [ ] todo list rm [regex]                        -> Rm list from [filename] (number or regex)
   - [ ] todo add [-l list] [item]                   -> Add item to [list] 
   - [ ] todo rm [-l list] [num|regex]               -> Rm item from [list] (number or regex)
-  - [ ] todo check [-l list] [num|regex]            -> Check item from [list] (number or regex)
-  - [ ] todo uncheck [-l list] [num|regex]          -> Uncheck item from [list] (number or regex)
+  - [ ] todo check [-l list] [-a] [num|regex]       -> Check item from [list] (number or regex)
+  - [ ] todo uncheck [-l list] [-a] [num|regex]     -> Uncheck item from [list] (number or regex)
   - [ ] todo toggle [-l list] [num|regex]           -> Toggle item from [list] (number or regex)
 
 ## todo.js
