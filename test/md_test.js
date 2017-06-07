@@ -3,7 +3,7 @@ const fs = require('fs');
 const md = require('../lib/md');
 const todo = require('../lib/todo');
 
-describe('md.js', function() {
+context('md.js', function() {
 
   describe('#readFile', function() {
     it('should return a promise', function() {
