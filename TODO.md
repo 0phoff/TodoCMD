@@ -12,7 +12,7 @@ This list contains an overview of everything that needs to be done.
 ## cli.js
   - [X] (cli_parser.js) Create CLI parser
   - [ ] todo                                        -> Open project [filename] in ncurses
-  - [ ] tood new                                    -> Create new project [filename]
+  - [X] todo new                                    -> Create new project [filename]
   - [ ] todo list [-i] [regex]                      -> If [num/regex] -> Show items from list; Else -> Show lists from [filename]
   - [ ] todo list add [title]                       -> Add new list to [filename]
   - [ ] todo list rm [regex]                        -> Rm list from [filename] (number or regex)
