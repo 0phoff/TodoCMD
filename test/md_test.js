@@ -24,12 +24,13 @@ context('md.js', function() {
     });
 
     it('should resolve the promise with a valid file', function() {
-      fs.writeFileSync('valid.md', '#valid\nproject desc\n\n## H2 here\nlist desc\n  - [ ] item\n- [X] item\n');
+      fs.writeFileSync('valid.md', '#valid\nproject desc\n\n## H2\n  - [ ] item\n- [X] item\n');
       let p = md.readFile('valid.md');
 
       return p
         .then(data => {
           assert(data instanceof todo.Project);
+          assert.equal(data.getList(0).desc, '');
           return Promise.resolve();
         }, err => Promise.reject(err));
     });
