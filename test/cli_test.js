@@ -132,11 +132,57 @@ context('cli_functions.js', function() {
   });
 
   describe('#addlist', function() {
-    
+    afterEach(function() {
+      inquirer.prompt.restore();
+    });
+
+    it('should add a list', function() {
+      sinon.stub(inquirer, 'prompt').resolves({ title: 'listTitle', desc: 'description\n' });
+      return cli.listAdd({argv: []})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.getList(project.length-1).title, 'listTitle');
+          assert.equal(project.getList(project.length-1).desc, 'description');
+        });
+    });
   });
 
-  describe('#rmlist', function() {
+  describe.skip('#rmlist', function() {
+    afterEach(function() {
+      inquirer.prompt.restore();
+    });
+
+    it('should remove a list', function() {
+      sinon.stub(inquirer, 'prompt').resolves({ listIndex: 1 });
+      return cli.listAdd({argv: []})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.length, 2);
+          assert.equal(project.findLists('list2'), 0);
+        });
+    });
     
+    it('should ask if a list is not empty', function() {
+      sinon.stub(inquirer, 'prompt').resolves({ confirm: true });
+      return cli.listAdd({argv: ['description']})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.length, 2);
+          assert.equal(project.findLists('description'), 0);
+        });
+    });
+
+    it('should allow the user to pick if the regex matches multiple lists', function() {
+      sinon.stub(inquirer, 'prompt')
+        .onCall(0).resolves({ listIndex: [0] })
+        .onCall(1).resolves({ confirm: true });
+      return cli.listAdd({argv: ['list']})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.length, 2);
+          assert.equal(project.findLists('description'), 0);
+        });
+    });
   });
 
 });
