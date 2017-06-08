@@ -1,6 +1,6 @@
 const assert = require('assert');
 const sinon = require('sinon');
-const stdout = require('test-console').stdout;
+const intercept = require('intercept-stdout');
 const inquirer = require('inquirer');
 const chalk = require('chalk');
 const md = require('../lib/md');
@@ -66,9 +66,70 @@ context('cli_functions.js', function() {
     });
   });
 
-   describe('#list', function() {
+  describe('#list', function() {
 
-   });
+    it('should display all lists when called without arguments', function() {
+      let log = [];
+      let restore = intercept(txt => {
+        log.push(txt);
+        return '';
+      });
+      return cli.list({argv: []})
+        .then(function() {
+          restore();
+          assert.deepEqual(log, [
+            chalk.cyan('Title')+'\n',
+            chalk.dim('Multiline\ndescription!')+'\n',
+            chalk.cyan('  >> ') + 'list1\n',
+            chalk.cyan('  >> ') + 'list2\n',
+            chalk.cyan('  >> ') + 'random\n'
+          ]);
+        })
+        .catch(err => { restore(); return Promise.reject(err); });
+    });
+
+    it('should display the items from all matched lists when called with a regexp', function() {
+      let log = [];
+      let restore = intercept(txt => {
+        log.push(txt);
+        return '';
+      });
+      return cli.list({argv: ["l.*t"]})
+        .then(function() {
+          restore();
+          assert.deepEqual(log, [
+            chalk.cyan('list1')+'\n',
+            chalk.dim('description')+'\n',
+            '  '+chalk.red(config.symbols.nok)+' todo item\n',
+            '  '+chalk.green(config.symbols.ok)+' done item\n',
+            '\n',
+            chalk.cyan('list2')+'\n',
+            '\n'
+          ]);
+        })
+        .catch(err => { restore(); return Promise.reject(err); });
+    });
+
+    it('should allow the user to select a list and display it\'s items in interactive mode', function() {
+      let log = [];
+      let restore = intercept(txt => {
+        log.push(txt);
+        return '';
+      });
+      let stub = sinon.stub(inquirer, 'prompt').resolves({'listindex': 2});
+      return cli.list({interactive: true, argv: []})
+        .then(function() {
+          restore();
+          sinon.assert.calledWith(md.readFile, 'TODO.md');
+          assert.deepEqual(log, [
+            chalk.dim('this is a sentence...')+'\n',
+            '  '+chalk.green(config.symbols.ok)+' this is done\n',
+            '  '+chalk.red(config.symbols.nok)+' this is not done\n',
+          ]);
+        })
+        .catch(err => { restore(); return Promise.reject(err); });
+    });
+  });
 
   describe('#addlist', function() {
     

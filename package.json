@@ -11,7 +11,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -30,10 +30,11 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^1.1.3",
-    "inquirer": "^3.0.6",
-    "test-console": "^1.0.0"
+    "inquirer": "^3.0.6"
   },
   "devDependencies": {
+    "intercept-stdout": "^0.1.2",
+    "mocha": "^3.4.2",
     "sinon": "^2.3.2"
   }
 }
