@@ -3,7 +3,7 @@ const fs = require('fs');
 const md = require('../lib/md');
 const todo = require('../lib/todo');
 
-describe('md.js', function() {
+context('md.js', function() {
 
   describe('#readFile', function() {
     it('should return a promise', function() {
@@ -24,12 +24,13 @@ describe('md.js', function() {
     });
 
     it('should resolve the promise with a valid file', function() {
-      fs.writeFileSync('valid.md', '#valid\nproject desc\n\n## H2 here\nlist desc\n  - [ ] item\n- [X] item\n');
+      fs.writeFileSync('valid.md', '#valid\nproject desc\n\n## H2\n  - [ ] item\n- [X] item\n');
       let p = md.readFile('valid.md');
 
       return p
         .then(data => {
           assert(data instanceof todo.Project);
+          assert.equal(data.getList(0).desc, '');
           return Promise.resolve();
         }, err => Promise.reject(err));
     });
@@ -67,7 +68,7 @@ describe('md.js', function() {
         .then(() => {
           let file = fs.readFileSync('file.md', 'utf8');
           fs.unlinkSync('file.md');
-          assert.equal(file, '# title\ndescription\n\n## list1\ndescription\n  - [ ] todo item\n  - [X] done item\n\n');
+          assert.equal(file, '# title\ndescription\n\n## list1\ndescription\n  - [ ]todo item\n  - [X]done item\n\n');
           return Promise.resolve();
         });
     });

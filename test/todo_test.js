@@ -2,6 +2,7 @@ const assert = require('assert');
 const todo = require('../lib/todo');
 
 context('todo.js', function() {
+
   describe('Class List', function() {
     beforeEach(function() {
       this.list = new todo.List('rad\n#title!', '###sanitizing\n\nis really nice\n  - 1\n* 2')
@@ -9,7 +10,7 @@ context('todo.js', function() {
 
     describe('#ctor', function() {
       it('should return a valid & sanitized object', function() {
-        assert.equal(this.list.title, ' rad #title!');
+        assert.equal(this.list.title, 'rad #title!');
         assert.equal(this.list.desc, 'sanitizing\nis really nice\n 1\n 2');
         assert.equal(this.list.length, 0);
         assert.equal(this.list.done, 0);
@@ -132,7 +133,7 @@ context('todo.js', function() {
 
     describe('#ctor', function() {
       it('should return a valid & sanitized object', function() {
-        assert.equal(this.project.title, ' #title');
+        assert.equal(this.project.title, '#title');
         assert.equal(this.project.desc, 'description\nmultiline!');
         assert.equal(this.project.length, 0);
         assert.deepEqual(this.project._content, []);
@@ -145,11 +146,11 @@ context('todo.js', function() {
         let list1 = new todo.List('todolist1', 'desc');
 
         this.project.insertList(list0);
-        assert.equal(this.project.getList(0).title, ' todolist0');
+        assert.equal(this.project.getList(0).title, 'todolist0');
 
         this.project.insertList(list1, 0);
-        assert.equal(this.project.getList(0).title, ' todolist1');
-        assert.equal(this.project.getList(1).title, ' todolist0');
+        assert.equal(this.project.getList(0).title, 'todolist1');
+        assert.equal(this.project.getList(1).title, 'todolist0');
       });
     });
 
@@ -163,7 +164,7 @@ context('todo.js', function() {
         assert.equal(this.project.length, 2);
         this.project.removeList(0);
         assert.equal(this.project.length, 1);
-        assert.equal(this.project.getList(0).title, ' todolist2');
+        assert.equal(this.project.getList(0).title, 'todolist2');
         this.project.removeList(0);
         assert.equal(this.project.length, 0);
       });
@@ -175,9 +176,36 @@ context('todo.js', function() {
         this.project.insertList(new todo.List('todolist1', 'desc')); 
         this.project.swapLists(0,1);
 
-        assert.equal(this.project.getList(0).title, ' todolist1');
-        assert.equal(this.project.getList(1).title, ' todolist0');
+        assert.equal(this.project.getList(0).title, 'todolist1');
+        assert.equal(this.project.getList(1).title, 'todolist0');
+      });
+    });
+
+    describe('#findLists', function() {
+      it('should return an array of matched items', function() {
+        this.project.insertList(new todo.List('todo0', 'description of the list')); 
+        this.project.insertList(new todo.List('list1', 'desc')); 
+        this.project.insertList(new todo.List('todolist2', 'desc')); 
+
+        assert.deepEqual(this.project.findLists('list'), [0,1,2]);
+        assert.deepEqual(this.project.findLists('todo'), [0,2]);
+      });
+
+      it('should be smart-case sensitive', function() {
+        this.project.insertList(new todo.List('todo0', 'description of the LIST')); 
+        this.project.insertList(new todo.List('list1', 'desc')); 
+
+        assert.deepEqual(this.project.findLists('list'), [0,1])
+        assert.deepEqual(this.project.findLists('LIST'), [0]);
+      });
+
+      it('should accept regular expresions', function() {
+        this.project.insertList(new todo.List('todo0', 'description of list number 1 (actually 0)')); 
+        this.project.insertList(new todo.List('list1', 'desc')); 
+        
+        assert.deepEqual(this.project.findLists('list.*1'), [0,1]);
       });
     });
   });
+
 });
