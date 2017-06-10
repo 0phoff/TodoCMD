@@ -1,29 +1,35 @@
 # TODO
 This is the TODO list for the todoCMD app.
 
-## V2.0.0 Checklist
-This list contains an overview of everything that needs to be done for V2.0.0
+## V2 Checklist
+This is an overview of everything that needs to be done for V2.0.0
   - [ ] (ui.js) blessed/ncurses UI
 
-## V1.0.0 Checklist
-This list contains an overview of everything that needs to be done for V1.0.0
+## V1.1 Checklist
+This is an overview of everything that needs to be done for V1.1.0
+  - [ ] Rewrite cli_parser.js
+  - [ ] Rewrite cli_functions.js
+  - [ ] (optional) Cleanup tests
+
+## V1 Checklist
+This is an overview of everything that needs to be done for V1.0.0
   - [X] (index.js) Library export
-  - [ ] (cli.js) CLI commands
+  - [X] (cli.js) CLI commands
   - [X] (todo.js) Manage JS Todo objects
   - [X] (md.js) Parse & Write markdown files
 
 ## cli.js
   - [X] (cli_parser.js) Create CLI parser
-  - [ ] todo                                        -> Open project [filename] in ncurses
-  - [X] todo new                                    -> Create new project [filename]
-  - [X] todo list [-i] [regex]                      -> If [num/regex] -> Show items from list; Else -> Show lists from [filename]
-  - [ ] todo list add [title]                       -> Add new list to [filename]
-  - [ ] todo list rm [regex]                        -> Rm list from [filename] (number or regex)
-  - [ ] todo add [-l list] [item]                   -> Add item to [list] 
-  - [ ] todo rm [-l list] [num|regex]               -> Rm item from [list] (number or regex)
-  - [ ] todo check [-l list] [-a] [num|regex]       -> Check item from [list] (number or regex)
-  - [ ] todo uncheck [-l list] [-a] [num|regex]     -> Uncheck item from [list] (number or regex)
-  - [ ] todo toggle [-l list] [num|regex]           -> Toggle item from [list] (number or regex)
+  - [X] todo
+  - [X] todo new
+  - [X] todo list [-i] [regex]
+  - [X] todo list add [title]
+  - [X] todo list rm [regex]
+  - [X] todo add [-l list] [item]
+  - [X] todo rm [-l list] [regex]
+  - [X] todo check [-l list] [-a] [regex]
+  - [X] todo uncheck [-l list] [-a] [regex]
+  - [ ] (optional) todo toggle [list] 
 
 ## todo.js
   - [X] CRUD Projects

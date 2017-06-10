@@ -1,3 +1,4 @@
 {
-  "defaultFileName" : "TODO.md"
+  "defaultFileName" : "TODO.md",
+  "maxListSize" : 50
 }

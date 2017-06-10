@@ -10,28 +10,23 @@ const config = require('../lib/config.js');
 
 context('cli_functions.js', function() {
 
-  before(function() {
-    let project = new todo.Project('Title', 'Multiline\ndescription!');
-    project.insertList(new todo.List('list1', 'description'));
-    project.insertList(new todo.List('list2', ''));
-    project.insertList(new todo.List('random', 'this is a sentence...'));
-    project.getList(0).insertItem('todo item');
-    project.getList(0).insertItem('done item', true);
-    project.getList(2).insertItem('this is done', true);
-    project.getList(2).insertItem('this is not done');
+  beforeEach(function() {
+    this.project = new todo.Project('Title', 'Multiline\ndescription!');
+    this.project.insertList(new todo.List('list1', 'description'));
+    this.project.insertList(new todo.List('list2', ''));
+    this.project.insertList(new todo.List('random', 'this is a sentence...'));
+    this.project.getList(0).insertItem('todo item');
+    this.project.getList(0).insertItem('done item', true);
+    this.project.getList(2).insertItem('this is done', true);
+    this.project.getList(2).insertItem('this is not done');
 
-    sinon.stub(md, "readFile").resolves(project);
-    sinon.stub(md, "writeFile").resolves(project);
-  });
-
-  after(function() {
-    md.readFile.restore();
-    md.writeFile.restore();
+    sinon.stub(md, "readFile").resolves(this.project);
+    sinon.stub(md, "writeFile").resolves(this.project);
   });
 
   afterEach(function() {
-    md.writeFile.resetHistory();
-    md.readFile.resetHistory();
+    md.readFile.restore();
+    md.writeFile.restore();
   });
 
   describe('#new', function() {
@@ -116,10 +111,11 @@ context('cli_functions.js', function() {
         log.push(txt);
         return '';
       });
-      let stub = sinon.stub(inquirer, 'prompt').resolves({'listindex': 2});
+      let stub = sinon.stub(inquirer, 'prompt').resolves({'listindices': 2});
       return cli.list({interactive: true, argv: []})
         .then(function() {
           restore();
+          stub.restore();
           sinon.assert.calledWith(md.readFile, 'TODO.md');
           assert.deepEqual(log, [
             chalk.dim('this is a sentence...')+'\n',
@@ -127,11 +123,11 @@ context('cli_functions.js', function() {
             '  '+chalk.red(config.symbols.nok)+' this is not done\n',
           ]);
         })
-        .catch(err => { restore(); return Promise.reject(err); });
+        .catch(err => { restore(); stub.restore(); return Promise.reject(err); });
     });
   });
 
-  describe('#addlist', function() {
+  describe('#listAdd', function() {
     afterEach(function() {
       inquirer.prompt.restore();
     });
@@ -147,14 +143,14 @@ context('cli_functions.js', function() {
     });
   });
 
-  describe.skip('#rmlist', function() {
+  describe('#listRm', function() {
     afterEach(function() {
       inquirer.prompt.restore();
     });
 
     it('should remove a list', function() {
-      sinon.stub(inquirer, 'prompt').resolves({ listIndex: 1 });
-      return cli.listAdd({argv: []})
+      sinon.stub(inquirer, 'prompt').resolves({ listindices: [1] });
+      return cli.listRm({argv: []})
         .then(function(project) {
           sinon.assert.calledOnce(md.writeFile);
           assert.equal(project.length, 2);
@@ -163,20 +159,21 @@ context('cli_functions.js', function() {
     });
     
     it('should ask if a list is not empty', function() {
-      sinon.stub(inquirer, 'prompt').resolves({ confirm: true });
-      return cli.listAdd({argv: ['description']})
+      sinon.stub(inquirer, 'prompt').resolves({ delete: true });
+      return cli.listRm({argv: ['description']})
         .then(function(project) {
           sinon.assert.calledOnce(md.writeFile);
+          sinon.assert.calledOnce(inquirer.prompt);
           assert.equal(project.length, 2);
-          assert.equal(project.findLists('description'), 0);
+          assert.deepEqual(project.findLists('description'), []);
         });
     });
 
     it('should allow the user to pick if the regex matches multiple lists', function() {
       sinon.stub(inquirer, 'prompt')
-        .onCall(0).resolves({ listIndex: [0] })
-        .onCall(1).resolves({ confirm: true });
-      return cli.listAdd({argv: ['list']})
+        .onCall(0).resolves({ listindices: [0] })
+        .onCall(1).resolves({ delete: true });
+      return cli.listRm({argv: ['list']})
         .then(function(project) {
           sinon.assert.calledOnce(md.writeFile);
           assert.equal(project.length, 2);
@@ -185,4 +182,79 @@ context('cli_functions.js', function() {
     });
   });
 
+  describe('#itemAdd', function() {
+    afterEach(function() {
+      inquirer.prompt.restore();
+    });
+
+    it('should add an item', function() {
+      sinon.stub(inquirer, 'prompt').resolves({ value: 'this is an item' });
+      return cli.itemAdd({list: 'random', argv: []})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.getList(2).getItem(2).value, 'this is an item');
+          assert.equal(project.getList(2).getItem(2).done, false);
+        });
+    });
+
+    it('should ask for a list if none is provided', function() {
+      sinon.stub(inquirer, 'prompt')
+        .onCall(0).resolves({ listindices: 2 })
+        .onCall(1).resolves({ value: 'todo item' });
+      return cli.itemAdd({argv: []})
+        .then(function(project) {
+          assert.equal(project.getList(2).getItem(2).value, 'todo item');
+          assert.equal(project.getList(2).getItem(2).done, false);
+        });
+    });
+  });
+
+  describe('#itemRm', function() {
+    afterEach(function() {
+      if (inquirer.prompt.restore)
+        inquirer.prompt.restore();
+    });
+
+    it('should remove an item', function() {
+      return cli.itemRm({list: 'random', argv: ['not']})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.getList(2).length, 1);
+          assert.equal(project.getList(2).getItem(0).done, true);
+        });
+    });
+
+    it('should let the user choose if there are multiple matches', function() {
+      sinon.stub(inquirer, 'prompt').resolves({ items: {list: this.project.getList(2), index: 0} });
+      return cli.itemRm({argv: []})
+        .then(function(project) {
+          assert.equal(project.getList(2).getItem(0).value, 'this is not done');
+          assert.equal(project.getList(2).getItem(0).done, false);
+        });
+    });
+  });
+
+  describe('#itemMark', function() {
+    afterEach(function() {
+      if (inquirer.prompt.restore)
+        inquirer.prompt.restore();
+    });
+
+    it('should mark an item as (un)checked', function() {
+      sinon.stub(inquirer, 'prompt').resolves({ items: {list: this.project.getList(2), index: 1} });
+      return cli.itemMark(true, {list: 'random', argv: ['this']})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.getList(2).getItem(1).done, true);
+        });
+    });
+
+    it('should mark all matched items, when the all flag is used', function() {
+      return cli.itemMark(false, { all: true, argv: ['done'] })
+        .then(function(project) {
+          assert.equal(project.getList(0).getItem(1).done, false);
+          assert.equal(project.getList(2).getItem(1).done, false);
+        });
+    });
+  });
 });
