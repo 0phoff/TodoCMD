@@ -13,7 +13,7 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha",
     "coverage": "rm docs/* -rf && ./node_modules/.bin/nyc npm test",
-    "badge": "./node_modules/.bin/istanbul-cobertura-badger -f -r docs/cobertura-coverage.xml -d docs/assets -b coverage && MOCHA_BADGE_SUBJECT=build MOCHA_BADGE_STYLE=flat ./node_modules/.bin/mocha --reporter mocha-reporter-badge > docs/assets/build.svg",
+    "badge": "./node_modules/.bin/istanbul-cobertura-badger -f -r docs/cobertura-coverage.xml -d assets -b coverage && MOCHA_BADGE_SUBJECT=build MOCHA_BADGE_STYLE=flat ./node_modules/.bin/mocha --reporter mocha-reporter-badge > assets/build.svg",
     "preversion": "npm test",
     "version": "npm run coverage && npm run badge && git add -A docs",
     "postversion": "git push && git push --tags"
