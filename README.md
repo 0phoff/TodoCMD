@@ -12,8 +12,10 @@
   - [X] Personal TODO files in the Home directory
   - [X] TODO files are saved as markdown
   - [ ] NCurses based Terminal UI
+  
+Take a look at this project's [TODO.md][todo-url]. It was created using this CLI!
 
-## Instalation
+## Installation
   > npm install todocmd -g
 
 That's all! _(assuming you have [node][node-url] already installed)_  
@@ -70,4 +72,5 @@ Thus, the idea for TodoCMD was born.
 [cov-url]:          https://0phoff.github.io/TodoCMD
 [pay-img]: unknown
 [pay-url]: unknown
+[todo-url]:         https://github.com/0phoff/TodoCMD/blob/master/TODO.md
 [node-url]:         https://nodejs.org
