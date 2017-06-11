@@ -16,7 +16,7 @@
 ## Instalation
   > npm install todocmd -g
 
-That's all!  
+That's all! _(assuming you have [node][node-url] already installed)_  
 The first time you use this CLI, it will create a directory to store a config.json file.  
 This is also the location where global TODO files will be stored.  
   - Linux   : HOME/.config/todocmd
@@ -70,3 +70,4 @@ Thus, the idea for TodoCMD was born.
 [cov-url]:          https://0phoff.github.io/TodoCMD
 [pay-img]: unknown
 [pay-url]: unknown
+[node-url]:         https://nodejs.org
