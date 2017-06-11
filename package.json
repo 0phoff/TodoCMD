@@ -2,14 +2,37 @@
   "name": "todocmd",
   "version": "0.0.1",
   "description": "TodoCMD is a basic CLI to manage markdown formatted todolists",
+  "bin": {
+    "todo": "./lib/cli.js"
+  },
   "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
-    "test:watch": "mocha -w --reporter min"
+    "test": "./node_modules/.bin/mocha",
+    "coverage": "rm docs/* -rf && ./node_modules/.bin/nyc npm test",
+    "badge": "./node_modules/.bin/istanbul-cobertura-badger -f -r docs/cobertura-coverage.xml -d assets -b coverage && MOCHA_BADGE_SUBJECT=build MOCHA_BADGE_STYLE=flat ./node_modules/.bin/mocha --reporter mocha-reporter-badge > assets/build.svg",
+    "preversion": "npm test",
+    "version": "npm run coverage && npm run badge && git add -A docs",
+    "postversion": "git push && git push --tags"
+  },
+  "nyc": {
+    "exclude": [
+      "test/**/*.js",
+      "lib/inquirer_specialCheckbox.js"
+    ],
+    "reporter": [
+      "text",
+      "cobertura",
+      "html"
+    ],
+    "report-dir": "./docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/0phoff/TodoCMD"
   },
   "keywords": [
     "todo",
@@ -24,8 +47,14 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^1.1.3",
-    "commander": "^2.9.0",
-    "inquirer": "^3.0.6"
+    "inquirer": "^3.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "intercept-stdout": "^0.1.2",
+    "istanbul-cobertura-badger": "^1.3.0",
+    "mocha": "^3.4.2",
+    "mocha-reporter-badge": "^0.1.0",
+    "nyc": "^11.0.2",
+    "sinon": "^2.3.4"
+  }
 }
