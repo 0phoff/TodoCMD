@@ -68,7 +68,7 @@ context('md.js', function() {
         .then(() => {
           let file = fs.readFileSync('file.md', 'utf8');
           fs.unlinkSync('file.md');
-          assert.equal(file, '# title\ndescription\n\n## list1\ndescription\n  - [ ]todo item\n  - [X]done item\n\n');
+          assert.equal(file, '# title\ndescription\n\n## list1\ndescription\n  - [ ] todo item\n  - [X] done item\n\n');
           return Promise.resolve();
         });
     });
