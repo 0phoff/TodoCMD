@@ -17,6 +17,7 @@ This is an overview of everything that needs to be done for V1.0.0
   - [X] (cli.js) CLI commands
   - [X] (todo.js) Manage JS Todo objects
   - [X] (md.js) Parse & Write markdown files
+  - [ ] Update readme
 
 ## cli.js
   - [X] (cli_parser.js) Create CLI parser
