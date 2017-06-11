@@ -61,12 +61,12 @@ After learning a lot about JS and NodeJS through books, guides and videos, I dec
 I tend to use a lot of TODO files in my personal projects, and wanted a good way to manage them, whilst still being able to easily read the raw file.
 Thus, the idea for TodoCMD was born.
 
-[logo]:             https://github.com/0phoff/TodoCMD/tree/master/assets/logo.svg
+[logo]:             https://0phoff.github.io/TodoCMD/assets/logo.svg
 [npm-version-img]:  https://img.shields.io/npm/v/todocmd.svg
 [npm-dl-img]:       https://img.shields.io/npm/dt/todocmd.svg
 [npm-url]:          https://npmjs.org/package/todocmd
-[build-img]:        https://github.com/0phoff/TodoCMD/tree/master/assets/build.svg
-[cov-img]:          https://github.com/0phoff/TodoCMD/tree/master/assets/coverage.svg
+[build-img]:        https://0phoff.github.io/TodoCMD/assets/build.svg
+[cov-img]:          https://0phoff.github.io/TodoCMD/assets/coverage.svg
 [cov-url]:          https://0phoff.github.io/TodoCMD
 [pay-img]: unknown
 [pay-url]: unknown
