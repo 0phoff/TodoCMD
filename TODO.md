@@ -9,6 +9,7 @@ This is an overview of everything that needs to be done for V2.0.0
 This is an overview of everything that needs to be done for V1.1.0
   - [ ] Rewrite cli_parser.js
   - [ ] Rewrite cli_functions.js
+  - [ ] Add markdown styling support
   - [ ] (optional) Cleanup tests
 
 ## V1 Checklist
@@ -17,7 +18,7 @@ This is an overview of everything that needs to be done for V1.0.0
   - [X] (cli.js) CLI commands
   - [X] (todo.js) Manage JS Todo objects
   - [X] (md.js) Parse & Write markdown files
-  - [ ] Update readme
+  - [X] Update readme
 
 ## cli.js
   - [X] (cli_parser.js) Create CLI parser
