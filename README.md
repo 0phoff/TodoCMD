@@ -2,11 +2,11 @@
 
   A basic CLI to manage markdown formatted TODO lists.
 
-  [![NPM Version][npm-version-img][npm-url]]
-  [![NPM Downloads][npm-dl-img][npm-url]]
+  [![NPM Version][npm-version-img]][npm-url]
+  [![NPM Downloads][npm-dl-img]][npm-url]
   ![Build][build-img]
-  [![Coverage][cov-img][cov-url]]
-
+  [![Coverage][cov-img]][cov-url]
+  
 ## Features
   - [X] Create and Manage TODO files with multiple lists
   - [X] Personal TODO files in the Home directory
@@ -16,7 +16,7 @@
 ## Instalation
   > npm install todocmd -g
 
-That's all!
+That's all!  
 The first time you use this CLI, it will create a directory to store a config.json file.  
 This is also the location where global TODO files will be stored.  
   - Linux   : HOME/.config/todocmd
