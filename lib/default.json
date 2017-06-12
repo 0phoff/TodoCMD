@@ -1,4 +1,5 @@
 {
   "defaultFileName" : "TODO.md",
-  "maxListSize" : 50
+  "maxListSize" : 50,
+  "strikethrough": true
 }
