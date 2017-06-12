@@ -2,21 +2,23 @@
 
   A basic CLI to manage markdown formatted TODO lists.
 
-  [![NPM Version][npm-version-img][npm-url]]
-  [![NPM Downloads][npm-dl-img][npm-url]]
+  [![NPM Version][npm-version-img]][npm-url]
+  [![NPM Downloads][npm-dl-img]][npm-url]
   ![Build][build-img]
-  [![Coverage][cov-img][cov-url]]
-
+  [![Coverage][cov-img]][cov-url]
+  
 ## Features
   - [X] Create and Manage TODO files with multiple lists
   - [X] Personal TODO files in the Home directory
   - [X] TODO files are saved as markdown
   - [ ] NCurses based Terminal UI
+  
+Take a look at this project's [TODO.md][todo-url]. It was created using this CLI!
 
-## Instalation
+## Installation
   > npm install todocmd -g
 
-That's all!
+That's all! _(assuming you have [node][node-url] already installed)_  
 The first time you use this CLI, it will create a directory to store a config.json file.  
 This is also the location where global TODO files will be stored.  
   - Linux   : HOME/.config/todocmd
@@ -61,12 +63,14 @@ After learning a lot about JS and NodeJS through books, guides and videos, I dec
 I tend to use a lot of TODO files in my personal projects, and wanted a good way to manage them, whilst still being able to easily read the raw file.
 Thus, the idea for TodoCMD was born.
 
-[logo]:             https://github.com/0phoff/TodoCMD/tree/master/assets/logo.svg
+[logo]:             https://rawgit.com/0phoff/TodoCMD/master/assets/logo.svg
 [npm-version-img]:  https://img.shields.io/npm/v/todocmd.svg
 [npm-dl-img]:       https://img.shields.io/npm/dt/todocmd.svg
 [npm-url]:          https://npmjs.org/package/todocmd
-[build-img]:        https://github.com/0phoff/TodoCMD/tree/master/assets/build.svg
-[cov-img]:          https://github.com/0phoff/TodoCMD/tree/master/assets/coverage.svg
+[build-img]:        https://rawgit.com/0phoff/TodoCMD/master/assets/build.svg
+[cov-img]:          https://rawgit.com/0phoff/TodoCMD/master/assets/coverage.svg
 [cov-url]:          https://0phoff.github.io/TodoCMD
 [pay-img]: unknown
 [pay-url]: unknown
+[todo-url]:         https://github.com/0phoff/TodoCMD/blob/master/TODO.md
+[node-url]:         https://nodejs.org
