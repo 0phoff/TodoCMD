@@ -6,13 +6,14 @@
   [![NPM Downloads][npm-dl-img]][npm-url]
   ![Build][build-img]
   [![Coverage][cov-img]][cov-url]
-  
+  [![Gratipay][pay-img]][pay-url]
+ 
 ## Features
   - [X] Create and Manage TODO files with multiple lists
   - [X] Personal TODO files in the Home directory
   - [X] TODO files are saved as markdown
   - [ ] NCurses based Terminal UI
-  
+
 Take a look at this project's [TODO.md][todo-url]. It was created using this CLI!
 
 ## Installation
@@ -70,7 +71,7 @@ Thus, the idea for TodoCMD was born.
 [build-img]:        https://rawgit.com/0phoff/TodoCMD/master/assets/build.svg
 [cov-img]:          https://rawgit.com/0phoff/TodoCMD/master/assets/coverage.svg
 [cov-url]:          https://0phoff.github.io/TodoCMD
-[pay-img]: unknown
-[pay-url]: unknown
+[pay-img]:          https://img.shields.io/gratipay/user/0phoff.svg
+[pay-url]:          https://gratipay.com/~0phoff/
 [todo-url]:         https://github.com/0phoff/TodoCMD/blob/master/TODO.md
 [node-url]:         https://nodejs.org
