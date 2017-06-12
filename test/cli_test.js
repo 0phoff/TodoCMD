@@ -15,7 +15,7 @@ context('cli_functions.js', function() {
     this.project.insertList(new todo.List('list1', 'description'));
     this.project.insertList(new todo.List('list2', ''));
     this.project.insertList(new todo.List('random', 'this is a sentence...'));
-    this.project.getList(0).insertItem('todo item');
+    this.project.getList(0).insertItem('todo **item**');
     this.project.getList(0).insertItem('done item', true);
     this.project.getList(2).insertItem('this is done', true);
     this.project.getList(2).insertItem('this is not done');
@@ -95,7 +95,7 @@ context('cli_functions.js', function() {
           assert.deepEqual(log, [
             chalk.cyan('list1')+'\n',
             chalk.dim('description')+'\n',
-            '  '+chalk.red(config.symbols.nok)+' todo item\n',
+            '  '+chalk.red(config.symbols.nok)+' todo '+chalk.bold('item')+'\n',
             '  '+chalk.green(config.symbols.ok)+' done item\n',
             '\n',
             chalk.cyan('list2')+'\n',

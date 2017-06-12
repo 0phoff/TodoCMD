@@ -14,7 +14,7 @@ This is an overview of everything that needs to be done for V1.2.0
 
 ## V1.1 Checklist
 This is an overview of everything that needs to be done for V1.1.0
-  - [ ] Add markdown styling support
+  - [X] Add markdown styling support
   - [ ] __issue #2__ Add -l/-L differentiation
   - [ ] __issue #3__ Add -n flag to add/rm item at specified index
   - [ ] Create Wiki to explain all commands in depth
