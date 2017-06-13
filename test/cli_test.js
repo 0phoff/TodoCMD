@@ -141,6 +141,16 @@ context('cli_functions.js', function() {
           assert.equal(project.getList(project.length-1).desc, 'description');
         });
     });
+
+    it('should add a list at the specified index', function() {
+      sinon.stub(inquirer, 'prompt').resolves({ title: 'listTitle', desc: 'description\n' });
+      return cli.listAdd({number: 1, argv: []})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.getList(0).title, 'listTitle');
+          assert.equal(project.getList(0).desc, 'description');
+        });
+    });
   });
 
   describe('#listRm', function() {
@@ -194,6 +204,16 @@ context('cli_functions.js', function() {
           sinon.assert.calledOnce(md.writeFile);
           assert.equal(project.getList(2).getItem(2).value, 'this is an item');
           assert.equal(project.getList(2).getItem(2).done, false);
+        });
+    });
+
+    it('should add an item at the specified index', function() {
+      sinon.stub(inquirer, 'prompt').resolves({ value: 'this is an item' });
+      return cli.itemAdd({list: 'random', number: 1, argv: []})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.getList(2).getItem(0).value, 'this is an item');
+          assert.equal(project.getList(2).getItem(0).done, false);
         });
     });
 
