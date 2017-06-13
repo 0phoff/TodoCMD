@@ -18,7 +18,7 @@ This is an overview of everything that needs to be done for V1.1.0
   - [X] __issue #5__ Replace chalk.dim
   - [X] __issue #2__ Add -l/-L differentiation
   - [X] __issue #3__ Add -n flag to _add_ & _ls add_ item at specified index
-  - [ ] __issue #4__ Create Wiki to explain all commands in depth
+  - [X] __issue #4__ Create Wiki to explain all commands in depth
 
 ## V1 Checklist
 This is an overview of everything that needs to be done for V1.0.0
