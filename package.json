@@ -1,6 +1,6 @@
 {
   "name": "todocmd",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "TodoCMD is a basic CLI to manage markdown formatted TODO lists",
   "bin": {
     "todo": "./lib/cli.js"
@@ -15,7 +15,7 @@
     "coverage": "rm docs/* -rf && ./node_modules/.bin/nyc npm test",
     "badge": "./node_modules/.bin/istanbul-cobertura-badger -f -r docs/cobertura-coverage.xml -d assets -b coverage && MOCHA_BADGE_SUBJECT=build MOCHA_BADGE_STYLE=flat ./node_modules/.bin/mocha --reporter mocha-reporter-badge > assets/build.svg",
     "preversion": "npm test",
-    "version": "npm run coverage && npm run badge && git add -A docs",
+    "version": "npm run coverage && npm run badge && git add -A docs assets",
     "postversion": "git push && git push --tags"
   },
   "nyc": {
