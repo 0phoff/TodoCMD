@@ -15,7 +15,7 @@ context('cli_functions.js', function() {
     this.project.insertList(new todo.List('list1', 'description'));
     this.project.insertList(new todo.List('list2', ''));
     this.project.insertList(new todo.List('random', 'this is a sentence...'));
-    this.project.getList(0).insertItem('todo item');
+    this.project.getList(0).insertItem('todo **item**');
     this.project.getList(0).insertItem('done item', true);
     this.project.getList(2).insertItem('this is done', true);
     this.project.getList(2).insertItem('this is not done');
@@ -74,7 +74,7 @@ context('cli_functions.js', function() {
           restore();
           assert.deepEqual(log, [
             chalk.cyan('Title')+'\n',
-            chalk.dim('Multiline\ndescription!')+'\n',
+            chalk.gray('Multiline\ndescription!')+'\n',
             chalk.cyan('  >> ') + 'list1\n',
             chalk.cyan('  >> ') + 'list2\n',
             chalk.cyan('  >> ') + 'random\n'
@@ -94,8 +94,8 @@ context('cli_functions.js', function() {
           restore();
           assert.deepEqual(log, [
             chalk.cyan('list1')+'\n',
-            chalk.dim('description')+'\n',
-            '  '+chalk.red(config.symbols.nok)+' todo item\n',
+            chalk.gray('description')+'\n',
+            '  '+chalk.red(config.symbols.nok)+' todo '+chalk.bold('item')+'\n',
             '  '+chalk.green(config.symbols.ok)+' done item\n',
             '\n',
             chalk.cyan('list2')+'\n',
@@ -118,7 +118,7 @@ context('cli_functions.js', function() {
           stub.restore();
           sinon.assert.calledWith(md.readFile, 'TODO.md');
           assert.deepEqual(log, [
-            chalk.dim('this is a sentence...')+'\n',
+            chalk.gray('this is a sentence...')+'\n',
             '  '+chalk.green(config.symbols.ok)+' this is done\n',
             '  '+chalk.red(config.symbols.nok)+' this is not done\n',
           ]);
@@ -139,6 +139,16 @@ context('cli_functions.js', function() {
           sinon.assert.calledOnce(md.writeFile);
           assert.equal(project.getList(project.length-1).title, 'listTitle');
           assert.equal(project.getList(project.length-1).desc, 'description');
+        });
+    });
+
+    it('should add a list at the specified index', function() {
+      sinon.stub(inquirer, 'prompt').resolves({ title: 'listTitle', desc: 'description\n' });
+      return cli.listAdd({number: 1, argv: []})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.getList(0).title, 'listTitle');
+          assert.equal(project.getList(0).desc, 'description');
         });
     });
   });
@@ -194,6 +204,16 @@ context('cli_functions.js', function() {
           sinon.assert.calledOnce(md.writeFile);
           assert.equal(project.getList(2).getItem(2).value, 'this is an item');
           assert.equal(project.getList(2).getItem(2).done, false);
+        });
+    });
+
+    it('should add an item at the specified index', function() {
+      sinon.stub(inquirer, 'prompt').resolves({ value: 'this is an item' });
+      return cli.itemAdd({list: 'random', number: 1, argv: []})
+        .then(function(project) {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.getList(2).getItem(0).value, 'this is an item');
+          assert.equal(project.getList(2).getItem(0).done, false);
         });
     });
 

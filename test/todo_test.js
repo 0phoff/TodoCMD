@@ -187,7 +187,8 @@ context('todo.js', function() {
         this.project.insertList(new todo.List('list1', 'desc')); 
         this.project.insertList(new todo.List('todolist2', 'desc')); 
 
-        assert.deepEqual(this.project.findLists('list'), [0,1,2]);
+        assert.deepEqual(this.project.findLists('list'), [1,2]);
+        assert.deepEqual(this.project.findLists('list', true), [0, 1,2]);
         assert.deepEqual(this.project.findLists('todo'), [0,2]);
       });
 
@@ -195,15 +196,15 @@ context('todo.js', function() {
         this.project.insertList(new todo.List('todo0', 'description of the LIST')); 
         this.project.insertList(new todo.List('list1', 'desc')); 
 
-        assert.deepEqual(this.project.findLists('list'), [0,1])
-        assert.deepEqual(this.project.findLists('LIST'), [0]);
+        assert.deepEqual(this.project.findLists('list', true), [0,1])
+        assert.deepEqual(this.project.findLists('LIST', true), [0]);
       });
 
       it('should accept regular expresions', function() {
         this.project.insertList(new todo.List('todo0', 'description of list number 1 (actually 0)')); 
         this.project.insertList(new todo.List('list1', 'desc')); 
         
-        assert.deepEqual(this.project.findLists('list.*1'), [0,1]);
+        assert.deepEqual(this.project.findLists('list.*1', true), [0,1]);
       });
     });
   });
