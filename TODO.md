@@ -16,7 +16,7 @@ This is an overview of everything that needs to be done for V1.2.0
 This is an overview of everything that needs to be done for V1.1.0
   - [X] Add markdown styling support
   - [X] __issue #5__ Replace chalk.dim
-  - [ ] __issue #2__ Add -l/-L differentiation
+  - [X] __issue #2__ Add -l/-L differentiation
   - [ ] __issue #3__ Add -n flag to add/rm item at specified index
   - [ ] __issue #4__ Create Wiki to explain all commands in depth
 
