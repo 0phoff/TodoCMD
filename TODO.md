@@ -3,7 +3,7 @@ This is the TODO list for the todoCMD app.
 
 ## V2 Checklist
 This is an overview of everything that needs to be done for V2.0.0
-  - [ ] (ui.js) blessed/ncurses UI
+  - [ ] _(ui.js)_ blessed/ncurses UI
 
 ## V1.2 Checklist
 This is an overview of everything that needs to be done for V1.2.0
@@ -15,9 +15,10 @@ This is an overview of everything that needs to be done for V1.2.0
 ## V1.1 Checklist
 This is an overview of everything that needs to be done for V1.1.0
   - [X] Add markdown styling support
+  - [X] __issue #5__ Replace chalk.dim
   - [ ] __issue #2__ Add -l/-L differentiation
   - [ ] __issue #3__ Add -n flag to add/rm item at specified index
-  - [ ] Create Wiki to explain all commands in depth
+  - [ ] __issue #4__ Create Wiki to explain all commands in depth
 
 ## V1 Checklist
 This is an overview of everything that needs to be done for V1.0.0
@@ -38,7 +39,7 @@ This is an overview of everything that needs to be done for V1.0.0
   - [X] todo rm [-l list] [regex]
   - [X] todo check [-l list] [-a] [regex]
   - [X] todo uncheck [-l list] [-a] [regex]
-  - [ ] (optional) todo toggle [list] 
+  - [ ] ~~_(optional)_ todo toggle [list]~~
 
 ## todo.js
   - [X] CRUD Projects

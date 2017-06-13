@@ -74,7 +74,7 @@ context('cli_functions.js', function() {
           restore();
           assert.deepEqual(log, [
             chalk.cyan('Title')+'\n',
-            chalk.dim('Multiline\ndescription!')+'\n',
+            chalk.gray('Multiline\ndescription!')+'\n',
             chalk.cyan('  >> ') + 'list1\n',
             chalk.cyan('  >> ') + 'list2\n',
             chalk.cyan('  >> ') + 'random\n'
@@ -94,7 +94,7 @@ context('cli_functions.js', function() {
           restore();
           assert.deepEqual(log, [
             chalk.cyan('list1')+'\n',
-            chalk.dim('description')+'\n',
+            chalk.gray('description')+'\n',
             '  '+chalk.red(config.symbols.nok)+' todo '+chalk.bold('item')+'\n',
             '  '+chalk.green(config.symbols.ok)+' done item\n',
             '\n',
@@ -118,7 +118,7 @@ context('cli_functions.js', function() {
           stub.restore();
           sinon.assert.calledWith(md.readFile, 'TODO.md');
           assert.deepEqual(log, [
-            chalk.dim('this is a sentence...')+'\n',
+            chalk.gray('this is a sentence...')+'\n',
             '  '+chalk.green(config.symbols.ok)+' this is done\n',
             '  '+chalk.red(config.symbols.nok)+' this is not done\n',
           ]);
