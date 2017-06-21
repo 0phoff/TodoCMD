@@ -15,6 +15,7 @@ pids
 node_modules/
 jspm_packages/
 .nyc_output/
+.profiling/
 
 # Optional npm cache directory
 .npm

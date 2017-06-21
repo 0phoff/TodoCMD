@@ -7,7 +7,9 @@ This is an overview of everything that needs to be done for V2.0.0
 
 ## V1.2 Checklist
 This is an overview of everything that needs to be done for V1.2.0
-  - [ ] Rewrite cli_parser.js & cli_functions.js to be faster
+  - [ ] Rewrite config.js
+  - [ ] Rewrite cli_parser.js
+  - [ ] Rewrite cli_functions.js
   - [ ] Change inquirer editor mode to multiline
   - [ ] _(optional)_ Cleanup tests
   - [ ] _(optional)_ Add GIF to README to show off how it works
