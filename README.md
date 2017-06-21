@@ -23,7 +23,7 @@ That's all! _(assuming you have [node][node-url] already installed)_
 The first time you use this CLI, it will create a directory to store a config.json file.  
 This is also the location where global TODO files will be stored.  
   - Linux   : HOME/.config/todocmd
-  - Mac     : HOME/.config/todocmd
+  - Mac     : HOME/Library/Preferences/todocmd
   - Windows : APPDATA/todocmd
 
 ## Usage
