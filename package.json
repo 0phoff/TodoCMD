@@ -11,7 +11,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha",
+    "test": "xo && ./node_modules/.bin/mocha",
     "coverage": "rm docs/* -rf && ./node_modules/.bin/nyc npm test",
     "badge": "./node_modules/.bin/istanbul-cobertura-badger -f -r docs/cobertura-coverage.xml -d assets -b coverage && MOCHA_BADGE_SUBJECT=build MOCHA_BADGE_STYLE=flat ./node_modules/.bin/mocha --reporter mocha-reporter-badge > assets/build.svg",
     "preversion": "npm test",
@@ -34,6 +34,18 @@
     "type": "git",
     "url": "git://github.com/0phoff/TodoCMD"
   },
+  "xo": {
+    "space": 2,
+    "ignore": [
+      "docs/*",
+      "lib/inquirer_specialCheckbox.js"
+    ],
+    "rules": {
+      "eqeqeq": "warn",
+      "no-multiple-empty-lines": "off",
+      "brace-style": ["error", "stroustrup", { "allowSingleLine": true }]
+    }
+  },
   "keywords": [
     "todo",
     "task",
@@ -55,6 +67,7 @@
     "mocha": "^3.4.2",
     "mocha-reporter-badge": "^0.1.0",
     "nyc": "^11.0.2",
-    "sinon": "^2.3.4"
+    "sinon": "^2.3.4",
+    "xo": "^0.18.2"
   }
 }

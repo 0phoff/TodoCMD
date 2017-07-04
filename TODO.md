@@ -7,7 +7,8 @@ This is an overview of everything that needs to be done for V2.0.0
 
 ## V1.2 Checklist
 This is an overview of everything that needs to be done for V1.2.0
-  - [ ] Rewrite config.js
+  - [X] Change to XO coding style
+  - [X] Rewrite config.js
   - [ ] Rewrite cli_parser.js
   - [ ] Rewrite cli_functions.js
   - [ ] Change inquirer editor mode to multiline
