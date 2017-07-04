@@ -5,6 +5,7 @@
   [![NPM Version][npm-version-img]][npm-url]
   [![NPM Downloads][npm-dl-img]][npm-url]
   ![Build][build-img]
+  [![XO code style][style-img]][style-url]
   [![Coverage][cov-img]][cov-url]
   [![Gratipay][pay-img]][pay-url]
  
@@ -63,6 +64,8 @@ Thus, the idea for TodoCMD was born.
 [npm-dl-img]:       https://img.shields.io/npm/dt/todocmd.svg
 [npm-url]:          https://npmjs.org/package/todocmd
 [build-img]:        https://rawgit.com/0phoff/TodoCMD/master/assets/build.svg
+[style-img]:        https://img.shields.io/badge/code_style-XO-5ed9c7.svg
+[style-url]:        https://github.com/sindresorhus/xo
 [cov-img]:          https://rawgit.com/0phoff/TodoCMD/master/assets/coverage.svg
 [cov-url]:          https://0phoff.github.io/TodoCMD
 [pay-img]:          https://img.shields.io/gratipay/user/0phoff.svg
