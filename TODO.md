@@ -15,7 +15,7 @@ This is an overview of everything that needs to be done for V1.2.0
   - [ ] __issue #7__ auto global folder
   - [ ] __issue #8__ Change inquirer multiline
   - [ ] __issue #4__ contributing page (wiki/contributing.md)
-  - [ ] __issue #9__ Change logo font to outline
+  - [X] __issue #9__ Change logo font to outline
   - [ ] _(optional)_ Cleanup tests
   - [ ] _(optional)_ Add GIF to README to show off how it works
 
