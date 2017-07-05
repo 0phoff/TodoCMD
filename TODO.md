@@ -9,7 +9,7 @@ This is an overview of everything that needs to be done for V2.0.0
 This is an overview of everything that needs to be done for V1.2.0
   - [X] Change to XO coding style
   - [X] Rewrite config.js
-  - [ ] __issue #6__ flag behaviour
+  - [X] __issue #6__ flag behaviour
   - [ ] __issue #7__ auto global folder
   - [ ] __issue #8__ Change inquirer multiline
   - [ ] Rewrite cli_parser.js
