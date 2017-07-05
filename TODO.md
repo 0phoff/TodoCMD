@@ -3,18 +3,19 @@ This is the TODO list for the todoCMD app.
 
 ## V2 Checklist
 This is an overview of everything that needs to be done for V2.0.0
-  - [ ] _(ui.js)_ blessed/ncurses UI
+  - [ ] *[ui.js]* blessed/ncurses UI
 
 ## V1.2 Checklist
 This is an overview of everything that needs to be done for V1.2.0
   - [X] Change to XO coding style
-  - [X] Rewrite config.js
+  - [X] *[config.js]* Refactor config
+  - [ ] *[cli_parser.js]* Refactor parser
+  - [ ] *[cli_functions.js]* Refactor cli functions
   - [X] __issue #6__ flag behaviour
   - [ ] __issue #7__ auto global folder
   - [ ] __issue #8__ Change inquirer multiline
-  - [ ] Rewrite cli_parser.js
-  - [ ] Rewrite cli_functions.js
   - [ ] __issue #4__ contributing page (wiki/contributing.md)
+  - [ ] __issue #9__ Change logo font to outline
   - [ ] _(optional)_ Cleanup tests
   - [ ] _(optional)_ Add GIF to README to show off how it works
 
@@ -28,14 +29,14 @@ This is an overview of everything that needs to be done for V1.1.0
 
 ## V1 Checklist
 This is an overview of everything that needs to be done for V1.0.0
-  - [X] _(index.js)_ Library export
-  - [X] _(cli.js)_ CLI commands
-  - [X] _(todo.js)_ Manage JS Todo objects
-  - [X] _(md.js)_ Parse & Write markdown files
+  - [X] *[index.js]* Library export
+  - [X] *[cli.js]* CLI commands
+  - [X] *[todo.js]* Manage JS Todo objects
+  - [X] *[md.js]* Parse & Write markdown files
   - [X] Update readme
 
 ## cli.js
-  - [X] _(cli_parser.js)_ Create CLI parser
+  - [X] *[cli_parser.js]* Create CLI parser
   - [X] todo
   - [X] todo new
   - [X] todo list [-i] [regex]
