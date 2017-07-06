@@ -1,4 +1,5 @@
 /* eslint-env node, es6, mocha */
+const path = require('path');
 const assert = require('assert');
 const sinon = require('sinon');
 const intercept = require('intercept-stdout');
@@ -121,7 +122,7 @@ context('cli-functions.js', () => {
         .then(() => {
           restore();
           stub.restore();
-          sinon.assert.calledWith(md.readFile, 'TODO.md');
+          sinon.assert.calledWith(md.readFile, path.join(process.cwd(), 'TODO.md'));
           assert.deepEqual(log, [
             chalk.gray('this is a sentence...') + '\n',
             '  ' + chalk.green(config.symbols.ok) + ' this is done\n',
