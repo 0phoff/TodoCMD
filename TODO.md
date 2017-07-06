@@ -12,7 +12,7 @@ This is an overview of everything that needs to be done for V1.2.0
   - [ ] *[cli_parser.js]* Refactor parser
   - [ ] *[cli_functions.js]* Refactor cli functions
   - [X] __issue #6__ flag behaviour
-  - [ ] __issue #7__ auto global folder
+  - [X] __issue #7__ auto global folder
   - [ ] __issue #8__ Change inquirer multiline
   - [ ] __issue #4__ contributing page (wiki/contributing.md)
   - [X] __issue #9__ Change logo font to outline
