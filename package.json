@@ -38,7 +38,8 @@
     "space": 2,
     "ignore": [
       "docs/*",
-      "lib/inquirer_specialCheckbox.js"
+      "lib/inquirer_specialCheckbox.js",
+      "lib/inquirer_multiline.js"
     ],
     "rules": {
       "eqeqeq": "warn",
