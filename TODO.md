@@ -18,7 +18,7 @@ This is an overview of everything that needs to be done for V2.0.0
   - [X] __issue #6__ Flag behaviour
   - [X] __issue #7__ Auto global folder
   - [X] __issue #8__ Change inquirer multiline
-  - [ ] __issue #4__ Contributing page (wiki/contributing.md)
+  - [X] __issue #4__ Contributing page (wiki/contributing.md)
   - [X] __issue #9__ Change logo font to outline
   - [ ] _(optional)_ Add GIF to README to show off how it works
 

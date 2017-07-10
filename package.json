@@ -21,7 +21,8 @@
   "nyc": {
     "exclude": [
       "test/**/*.js",
-      "lib/inquirer_specialCheckbox.js"
+      "lib/inquirer_specialCheckbox.js",
+      "lib/inquirer_multiline.js"
     ],
     "reporter": [
       "text",
@@ -44,7 +45,13 @@
     "rules": {
       "eqeqeq": "warn",
       "no-multiple-empty-lines": "off",
-      "brace-style": ["error", "stroustrup", { "allowSingleLine": true }]
+      "brace-style": [
+        "error",
+        "stroustrup",
+        {
+          "allowSingleLine": true
+        }
+      ]
     }
   },
   "keywords": [
