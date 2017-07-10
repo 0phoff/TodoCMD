@@ -5,6 +5,8 @@ This is the TODO list for the todoCMD app.
 This is an overview of everything that needs to be done for V3.0.0
   - [ ] *[ui.js]* Blessed/ncurses UI
 
+## ↳  ui.js
+
 ## V2.0.1
 This is an overview of everything that needs to be done for V2.0.1
   - [ ] *[cli_parser.js]* Refactor parser
@@ -38,7 +40,7 @@ This is an overview of everything that needs to be done for V1.0.0
   - [X] *[md.js]* Parse & Write markdown files
   - [X] Update readme
 
-## cli.js checklist
+## ↳  cli.js
   - [X] *[cli_parser.js]* Create CLI parser
   - [X] todo
   - [X] todo new
@@ -51,14 +53,14 @@ This is an overview of everything that needs to be done for V1.0.0
   - [X] todo uncheck [-l list] [-a] [regex]
   - [ ] ~~_(optional)_ todo toggle [list]~~
 
-## todo.js checklist
+## ↳  todo.js
   - [X] CRUD Projects
   - [X] Edit Project details
   - [X] CRUD Project Lists
   - [X] Edit List details
   - [X] CRUD List items
 
-## md.js checklist
+## ↳  md.js
   - [X] Parse markdown file to a JS Todo object
   - [X] Write a markdown file from a JS Todo object
 
