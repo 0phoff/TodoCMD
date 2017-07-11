@@ -1,18 +1,30 @@
 # TODO
-This is the TODO list for the todoCMD app.
+This is the TODO list for the TodoCMD application
 
-## V2 Checklist
-This is an overview of everything that needs to be done for V2.0.0
-  - [ ] _(ui.js)_ blessed/ncurses UI
+## V3
+This is an overview of everything that needs to be done for V3.0.0
+  - [ ] *[ui.js]* Blessed/ncurses UI
 
-## V1.2 Checklist
-This is an overview of everything that needs to be done for V1.2.0
-  - [ ] Rewrite cli_parser.js & cli_functions.js to be faster
-  - [ ] Change inquirer editor mode to multiline
+## ↳  ui.js
+
+## V2.0.1
+This is an overview of everything that needs to be done for V2.0.1
+  - [ ] *[cli_parser.js]* Refactor parser
+  - [ ] *[cli_functions.js]* Refactor cli functions
   - [ ] _(optional)_ Cleanup tests
-  - [ ] _(optional)_ Add GIF to README to show off how it works
 
-## V1.1 Checklist
+## V2
+This is an overview of everything that needs to be done for V2.0.0
+  - [X] Change to XO coding style
+  - [X] *[config.js]* Refactor config
+  - [X] __issue #6__ Flag behaviour
+  - [X] __issue #7__ Auto global folder
+  - [X] __issue #8__ Change inquirer multiline
+  - [X] __issue #4__ Contributing page (wiki/contributing.md)
+  - [X] __issue #9__ Change logo font to outline
+  - [X] _(optional)_ Add GIF to README to show off how it works
+
+## V1.1
 This is an overview of everything that needs to be done for V1.1.0
   - [X] Add markdown styling support
   - [X] __issue #5__ Replace chalk.dim
@@ -20,16 +32,16 @@ This is an overview of everything that needs to be done for V1.1.0
   - [X] __issue #3__ Add -n flag to _add_ & _ls add_ item at specified index
   - [X] __issue #4__ Create Wiki to explain all commands in depth
 
-## V1 Checklist
+## V1
 This is an overview of everything that needs to be done for V1.0.0
-  - [X] _(index.js)_ Library export
-  - [X] _(cli.js)_ CLI commands
-  - [X] _(todo.js)_ Manage JS Todo objects
-  - [X] _(md.js)_ Parse & Write markdown files
+  - [X] *[index.js]* Library export
+  - [X] *[cli.js]* CLI commands
+  - [X] *[todo.js]* Manage JS Todo objects
+  - [X] *[md.js]* Parse & Write markdown files
   - [X] Update readme
 
-## cli.js
-  - [X] _(cli_parser.js)_ Create CLI parser
+## ↳  cli.js
+  - [X] *[cli_parser.js]* Create CLI parser
   - [X] todo
   - [X] todo new
   - [X] todo list [-i] [regex]
@@ -41,14 +53,14 @@ This is an overview of everything that needs to be done for V1.0.0
   - [X] todo uncheck [-l list] [-a] [regex]
   - [ ] ~~_(optional)_ todo toggle [list]~~
 
-## todo.js
+## ↳  todo.js
   - [X] CRUD Projects
   - [X] Edit Project details
   - [X] CRUD Project Lists
   - [X] Edit List details
   - [X] CRUD List items
 
-## md.js
+## ↳  md.js
   - [X] Parse markdown file to a JS Todo object
   - [X] Write a markdown file from a JS Todo object
 

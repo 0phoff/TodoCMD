@@ -5,6 +5,7 @@
   [![NPM Version][npm-version-img]][npm-url]
   [![NPM Downloads][npm-dl-img]][npm-url]
   ![Build][build-img]
+  [![XO code style][style-img]][style-url]
   [![Coverage][cov-img]][cov-url]
   [![Gratipay][pay-img]][pay-url]
  
@@ -23,7 +24,7 @@ That's all! _(assuming you have [node][node-url] already installed)_
 The first time you use this CLI, it will create a directory to store a config.json file.  
 This is also the location where global TODO files will be stored.  
   - Linux   : HOME/.config/todocmd
-  - Mac     : HOME/.config/todocmd
+  - Mac     : HOME/Library/Preferences/todocmd
   - Windows : APPDATA/todocmd
 
 ## Usage
@@ -53,6 +54,10 @@ This command will mark an item as done.
 __todo uncheck__  
 This command will mark an item as not done.
 
+<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_setup.gif"><img alt="Demo 1" src="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_setup.gif" width="425"/></a>
+<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_check.gif"><img alt="Demo 2" src="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_check.gif" width="425"/></a>  
+<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_real.gif"><img alt="Demo 3" src="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_real.gif" width="425"/></a>
+
 ## Background
 After learning a lot about JS and NodeJS through books, guides and videos, I decided to put my newfound skills to the test and create an application.
 I tend to use a lot of TODO files in my personal projects, and wanted a good way to manage them, whilst still being able to easily read the raw file.
@@ -63,6 +68,8 @@ Thus, the idea for TodoCMD was born.
 [npm-dl-img]:       https://img.shields.io/npm/dt/todocmd.svg
 [npm-url]:          https://npmjs.org/package/todocmd
 [build-img]:        https://rawgit.com/0phoff/TodoCMD/master/assets/build.svg
+[style-img]:        https://img.shields.io/badge/code_style-XO-5ed9c7.svg
+[style-url]:        https://github.com/sindresorhus/xo
 [cov-img]:          https://rawgit.com/0phoff/TodoCMD/master/assets/coverage.svg
 [cov-url]:          https://0phoff.github.io/TodoCMD
 [pay-img]:          https://img.shields.io/gratipay/user/0phoff.svg
