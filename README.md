@@ -54,9 +54,9 @@ This command will mark an item as done.
 __todo uncheck__  
 This command will mark an item as not done.
 
-<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_setup.gif"><img alt="Demo 1" src="https://github.com/0phoff/TodoCMD/raw/develop/assets/cli_setup.gif" width="450"/></a>
-<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_check.gif"><img alt="Demo 2" src="https://github.com/0phoff/TodoCMD/raw/develop/assets/cli_check.gif" width="450"/></a>  
-<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_real.gif"><img alt="Demo 3" src="https://github.com/0phoff/TodoCMD/raw/develop/assets/cli_real.gif" width="450"/></a>
+<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_setup.gif"><img alt="Demo 1" src="https://github.com/0phoff/TodoCMD/raw/develop/assets/cli_setup.gif" width="425"/></a>
+<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_check.gif"><img alt="Demo 2" src="https://github.com/0phoff/TodoCMD/raw/develop/assets/cli_check.gif" width="425"/></a>  
+<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_real.gif"><img alt="Demo 3" src="https://github.com/0phoff/TodoCMD/raw/develop/assets/cli_real.gif" width="425"/></a>
 
 ## Background
 After learning a lot about JS and NodeJS through books, guides and videos, I decided to put my newfound skills to the test and create an application.
