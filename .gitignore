@@ -16,6 +16,7 @@ node_modules/
 jspm_packages/
 .nyc_output/
 .profiling/
+.media/
 
 # Optional npm cache directory
 .npm
