@@ -54,9 +54,9 @@ This command will mark an item as done.
 __todo uncheck__  
 This command will mark an item as not done.
 
-[![Demo 1][demo1-gif]][demo1-gif]
-[![Demo 2][demo2-gif]][demo2-gif]  
-[![Demo 3][demo3-gif]][demo3-gif]
+<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_setup.gif"><img alt="Demo 1" src="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_setup.gif" width="300"/></a>
+<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_check.gif"><img alt="Demo 2" src="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_check.gif" width="300"/></a>  
+<a href="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_real.gif"><img alt="Demo 3" src="https://github.com/0phoff/TodoCMD/raw/master/assets/cli_real.gif" width="300"/></a>
 
 ## Background
 After learning a lot about JS and NodeJS through books, guides and videos, I decided to put my newfound skills to the test and create an application.
