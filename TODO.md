@@ -1,5 +1,5 @@
 # TODO
-This is the TODO list for the todoCMD app.
+This is the TODO list for the TodoCMD application
 
 ## V3
 This is an overview of everything that needs to be done for V3.0.0
@@ -22,7 +22,7 @@ This is an overview of everything that needs to be done for V2.0.0
   - [X] __issue #8__ Change inquirer multiline
   - [X] __issue #4__ Contributing page (wiki/contributing.md)
   - [X] __issue #9__ Change logo font to outline
-  - [ ] _(optional)_ Add GIF to README to show off how it works
+  - [X] _(optional)_ Add GIF to README to show off how it works
 
 ## V1.1
 This is an overview of everything that needs to be done for V1.1.0

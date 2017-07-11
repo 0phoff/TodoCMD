@@ -54,6 +54,10 @@ This command will mark an item as done.
 __todo uncheck__  
 This command will mark an item as not done.
 
+[![Demo 1][demo1-gif]][demo1-gif]
+[![Demo 2][demo2-gif]][demo2-gif]  
+[![Demo 3][demo3-gif]][demo3-gif]
+
 ## Background
 After learning a lot about JS and NodeJS through books, guides and videos, I decided to put my newfound skills to the test and create an application.
 I tend to use a lot of TODO files in my personal projects, and wanted a good way to manage them, whilst still being able to easily read the raw file.
@@ -73,3 +77,7 @@ Thus, the idea for TodoCMD was born.
 [todo-url]:         https://github.com/0phoff/TodoCMD/blob/master/TODO.md
 [wiki-url]:         https://github.com/0phoff/TodoCMD/wiki
 [node-url]:         https://nodejs.org
+[demo1-gif]:        https://github.com/0phoff/TodoCMD/raw/master/assets/cli_setup.gif
+[demo2-gif]:        https://github.com/0phoff/TodoCMD/raw/master/assets/cli_check.gif
+[demo3-gif]:        https://github.com/0phoff/TodoCMD/raw/master/assets/cli_real.gif
+
