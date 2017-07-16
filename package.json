@@ -2,14 +2,35 @@
   "name": "todocmd",
   "version": "2.0.0",
   "description": "TodoCMD is a basic CLI to manage markdown formatted TODO lists",
-  "bin": {
-    "todo": "./lib/cli.js"
-  },
   "main": "index.js",
+  "bin": {
+    "todo": "./lib/cli/cli.js"
+  },
   "directories": {
     "lib": "lib",
     "test": "test"
   },
+  "files": [
+    "index.js",
+    "lib",
+    "README.md",
+    "CONTRIBUTING.md",
+    "TODO.md"
+  ],
+  "keywords": [
+    "todo",
+    "task",
+    "list",
+    "cli",
+    "cmd",
+    "command",
+    "terminal",
+    "console",
+    "md",
+    "markdown"
+  ],
+  "author": "0phoff",
+  "license": "ISC",
   "scripts": {
     "test": "xo && ./node_modules/.bin/mocha",
     "coverage": "rm docs/* -rf && ./node_modules/.bin/nyc npm test",
@@ -54,17 +75,6 @@
       ]
     }
   },
-  "keywords": [
-    "todo",
-    "task",
-    "list",
-    "cli",
-    "cmd",
-    "md",
-    "markdown"
-  ],
-  "author": "0phoff",
-  "license": "ISC",
   "dependencies": {
     "chalk": "^1.1.3",
     "inquirer": "^3.2.0"
