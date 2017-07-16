@@ -22,7 +22,7 @@ This is an overview of everything that needs to be done for V2.0.1
   - [ ] __[cli_parser.js]__ Refactor parser
   - [ ] __[cli_functions.js]__ Refactor cli functions
   - [ ] Add .npmignore/files section in package.json
-  - [ ] Change inquirer prompts to XO coding style
+  - [X] Change inquirer prompts to XO coding style
   - [ ] *(optional)* Cleanup tests
 
 ## V2
