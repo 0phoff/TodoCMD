@@ -1,7 +1,7 @@
 /* eslint-env node, es6, mocha */
 const assert = require('assert');
 const fs = require('fs');
-const md = require('../lib/md');
+const md = require('../lib/md/md');
 const todo = require('../lib/todo');
 
 context('md.js', () => {

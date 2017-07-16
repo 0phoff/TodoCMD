@@ -5,9 +5,9 @@ const sinon = require('sinon');
 const intercept = require('intercept-stdout');
 const inquirer = require('inquirer');
 const chalk = require('chalk');
-const md = require('../lib/md');
+const md = require('../lib/md/md');
 const todo = require('../lib/todo');
-const cli = require('../lib/cli-functions');
+const cli = require('../lib/cli/functions');
 const config = require('../lib/config.js');
 
 context('cli-functions.js', () => {
