@@ -22,15 +22,22 @@
     "task",
     "list",
     "cli",
+    "command-line",
     "cmd",
     "command",
     "terminal",
+    "tty",
+    "shell",
     "console",
     "md",
     "markdown"
   ],
   "author": "0phoff",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/0phoff/TodoCMD"
+  },
   "scripts": {
     "test": "xo && ./node_modules/.bin/mocha",
     "coverage": "rm docs/* -rf && ./node_modules/.bin/nyc npm test",
@@ -51,10 +58,6 @@
       "html"
     ],
     "report-dir": "./docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/0phoff/TodoCMD"
   },
   "xo": {
     "space": 2,
