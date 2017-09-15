@@ -111,6 +111,54 @@ context('cli-functions.js', () => {
         });
     });
 
+    it('should display the checked items when called with the checked flag', () => {
+      const log = [];
+      const restore = intercept(txt => {
+        log.push(txt);
+        return '';
+      });
+      return cli.list({checked: true, argv: ['l.*t']})
+        .then(() => {
+          restore();
+          assert.deepEqual(log, [
+            chalk.cyan('list1') + '\n',
+            chalk.gray('description') + '\n',
+            '  ' + chalk.green(config.symbols.ok) + ' done item\n',
+            '\n',
+            chalk.cyan('list2') + '\n',
+            '\n'
+          ]);
+        })
+        .catch(err => {
+          restore();
+          return Promise.reject(err);
+        });
+    });
+
+    it('should display the unchecked items when called with the unchecked flag', () => {
+      const log = [];
+      const restore = intercept(txt => {
+        log.push(txt);
+        return '';
+      });
+      return cli.list({unchecked: true, argv: ['l.*t']})
+        .then(() => {
+          restore();
+          assert.deepEqual(log, [
+            chalk.cyan('list1') + '\n',
+            chalk.gray('description') + '\n',
+            '  ' + chalk.red(config.symbols.nok) + ' todo ' + chalk.bold('item') + '\n',
+            '\n',
+            chalk.cyan('list2') + '\n',
+            '\n'
+          ]);
+        })
+        .catch(err => {
+          restore();
+          return Promise.reject(err);
+        });
+    });
+
     it('should allow the user to select a list and display it\'s items in interactive mode', () => {
       const log = [];
       const restore = intercept(txt => {
@@ -178,7 +226,7 @@ context('cli-functions.js', () => {
         });
     });
 
-    it('should remove all lists, when the all flag is used', () => {
+    it('should remove all lists when the all flag is used', () => {
       sinon.stub(inquirer, 'prompt').resolves({delete: true});
       return cli.listRm({all: true, argv: []})
         .then(project => {
@@ -264,7 +312,7 @@ context('cli-functions.js', () => {
         });
     });
 
-    it('should remove all items, when the all flag is used', () => {
+    it('should remove all items when the all flag is used', () => {
       return cli.itemRm({list: 'random', all: true, argv: []})
         .then(project => {
           sinon.assert.calledOnce(md.writeFile);
@@ -298,7 +346,7 @@ context('cli-functions.js', () => {
         });
     });
 
-    it('should mark all matched items, when the all flag is used', () => {
+    it('should mark all matched items when the all flag is used', () => {
       return cli.itemMark(false, {all: true, argv: ['done']})
         .then(project => {
           assert.equal(project.getList(0).getItem(1).done, false);
