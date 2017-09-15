@@ -24,7 +24,7 @@ This is an overview of everything that needs to be done for V2.0.1
   - [X] Add .npmignore/files section in package.json
   - [X] Change inquirer prompts to XO coding style
   - [X] __issue #10__ Add todo rm --all
-  - [ ] __issue #11__ option to only list (un)completed tasks
+  - [X] __issue #11__ option to only list (un)completed tasks
   - [ ] *(optional)* Cleanup tests
 
 ## V2
