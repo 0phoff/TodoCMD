@@ -8,7 +8,7 @@ const chalk = require('chalk');
 const md = require('../lib/md/md');
 const todo = require('../lib/todo');
 const cli = require('../lib/cli/functions');
-const config = require('../lib/config.js');
+const config = require('../lib/config');
 
 context('cli-functions.js', () => {
   beforeEach(() => {
@@ -178,6 +178,15 @@ context('cli-functions.js', () => {
         });
     });
 
+    it('should remove all lists, when the all flag is used', () => {
+      sinon.stub(inquirer, 'prompt').resolves({delete: true});
+      return cli.listRm({all: true, argv: []})
+        .then(project => {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.length, 0);
+        });
+    });
+
     it('should ask if a list is not empty', () => {
       sinon.stub(inquirer, 'prompt').resolves({delete: true});
       return cli.listRm({argv: ['description']})
@@ -252,6 +261,14 @@ context('cli-functions.js', () => {
           sinon.assert.calledOnce(md.writeFile);
           assert.equal(project.getList(2).length, 1);
           assert.equal(project.getList(2).getItem(0).done, true);
+        });
+    });
+
+    it('should remove all items, when the all flag is used', () => {
+      return cli.itemRm({list: 'random', all: true, argv: []})
+        .then(project => {
+          sinon.assert.calledOnce(md.writeFile);
+          assert.equal(project.getList(2).length, 0);
         });
     });
 
