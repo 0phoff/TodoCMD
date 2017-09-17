@@ -1,6 +1,6 @@
 {
   "name": "todocmd",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "TodoCMD is a basic CLI to manage markdown formatted TODO lists",
   "main": "index.js",
   "bin": {
