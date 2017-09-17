@@ -49,8 +49,8 @@
   "nyc": {
     "exclude": [
       "test/**/*.js",
-      "lib/inquirer_specialCheckbox.js",
-      "lib/inquirer_multiline.js"
+      "lib/inquirer-custom-checkbox.js",
+      "lib/inquirer-multiline.js"
     ],
     "reporter": [
       "text",
