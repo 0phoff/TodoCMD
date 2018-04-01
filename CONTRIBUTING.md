@@ -15,4 +15,4 @@ For more information, please visit the [contributing wiki](https://github.com/0p
 
 
 ## Main contributers
-[0phoff](https://github.com/0phoff) - [Gratipay](https://gratipay.com/~0phoff/)
+[0phoff](https://github.com/0phoff)

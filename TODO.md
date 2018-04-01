@@ -17,10 +17,10 @@ This is an overview of everything that needs to be done for V300
   - [ ] *(command)* Mark items
   - [ ] *(command)* Edit items
 
-## V2.0.2
-This is an overview of everything that needs to be done for V202
+## V2.1.0
+This is an overview of everything that needs to be done for V210
   - [ ] __[cli_parser.js]__ Move out cli_parser to own package
-  - [ ] __[cli_functions.js]__ Refactor cli functions
+  - [ ] __[cli_functions.js]__ Refactor cli functions to RxJS
   - [ ] *(optional)* Cleanup tests
 
 ## V2.0.1

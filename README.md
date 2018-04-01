@@ -7,7 +7,6 @@
   ![Build][build-img]
   [![XO code style][style-img]][style-url]
   [![Coverage][cov-img]][cov-url]
-  [![Gratipay][pay-img]][pay-url]
  
 ## Features
   - [X] Create and Manage TODO files with multiple lists
@@ -72,8 +71,6 @@ Thus, the idea for TodoCMD was born.
 [style-url]:        https://github.com/sindresorhus/xo
 [cov-img]:          https://rawgit.com/0phoff/TodoCMD/master/assets/coverage.svg
 [cov-url]:          https://0phoff.github.io/TodoCMD
-[pay-img]:          https://img.shields.io/gratipay/user/0phoff.svg
-[pay-url]:          https://gratipay.com/~0phoff/
 [todo-url]:         https://github.com/0phoff/TodoCMD/blob/master/TODO.md
 [wiki-url]:         https://github.com/0phoff/TodoCMD/wiki
 [node-url]:         https://nodejs.org
